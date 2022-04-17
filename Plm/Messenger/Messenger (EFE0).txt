@@ -1,0 +1,14 @@
+Messenger
+
+Author: Quote58 (inspired by Messenger PLM by JAM)
+
+This PLM does not affect the tile under it,
+it simply checks if it should spawn, and if so waits until the player touches the square it's on,
+and then displays the message box, sets the bit, and deletes itself.
+
+High [BB]
+     FF = returning
+00 - FE = bit to set and check against in the extra event bits array (7ED822)
+
+Low [MM]
+00 - FF = index of message box to display
