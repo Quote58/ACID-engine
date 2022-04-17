@@ -1,0 +1,8 @@
+Dash Ball
+
+Author: Quote58
+
+Uses bit $0010 of the equipped/collected items array ($09A2/$09A4)
+
+This item allows samus to 'run' while in morph ball if it is equipped and the run button is held.
+By extension it also allows samus to get a speed boost while in morph.

@@ -1,0 +1,15 @@
+	dw $0100, .pause, .varia_equip					;38
+	dw $0100, .pause, .spring_ball_equip			;39
+	dw $0100, .pause, .morph_ball_equip				;3A
+	dw $0100, .pause, .screw_attack_equip			;3B
+	dw $0100, .pause, .dash_ball_equip				;3C
+	dw $0100, .pause, .gravity_suit_equip			;3D
+	dw $0100, .pause, .hi_jump_equip				;3E
+	dw $0100, .pause, .space_jump_equip				;3F
+	dw $0106, .pause, .bombs_equip					;40
+	dw $0104, .pause, .speed_booster_equip			;41
+	dw $0100, .pause, .wave_beam_equip				;42
+	dw $0100, .pause, .ice_beam_equip				;43
+	dw $0100, .pause, .spazer_beam_equip			;44
+	dw $0100, .pause, .plasma_beam_equip			;45
+	dw $0100, .pause, .charge_beam_equip			;46

@@ -1,0 +1,22 @@
+Message_box_data:
+.headers
+;format = db delay index, substitutions : dw border, tilemap
+
+; ::: headers :::
+	; --- vanilla headers ---
+	incsrc Code/data/message_boxes/PB_headers.asm
+	; --- extra misc headers ---
+	dw $0000, .short, .dash_ball					;1D
+	; --- end of headers ---
+	dw $0000, $0000,  .end
+
+; ::: data :::
+	; --- vanilla data ---
+	incsrc Code/data/message_boxes/PB_data.asm
+	; --- extra misc data ---
+.dash_ball
+   %text_purple()
+	dw "______#####dash#ball#####_______"
+	; --- end of data ---
+.end
+	dw $000E
