@@ -1,5 +1,5 @@
 # ACID Engine
-A(rbitrarily) C(ompilable) I(mprovement) D(irectory), or ACID for short (thanks Bob), is a structure for creating super metroid hacks which implements many large scale system and subsystem changes/rewrites that I wrote while working on Project Base 0.8.
+A(rbitrarily) C(ompilable) I(mprovement) D(irectory), or ACID for short (thanks Bob), is a structure for creating super metroid hacks which implements many large scale system and subsystem changes/rewrites that I wrote while working on Project Base 0.8. The hack released in 2020, but the codebase needed to be heavily refactored before making it ACID, so the new codebase wasn't completed until much later, and now it is finally available here on github.
 
 Things to keep in mind:
 1. My formatting, specifically with tabs and spaces, has been messed up by uploading it to github. It doesn't change anything in the code functionality of course, but much of the formatting now looks inconsistent with itself, and with the way I structure whitespace in my code as a general rule.
