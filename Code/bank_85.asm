@@ -1,19 +1,19 @@
 lorom
 
-macro %text_purple()
-	table Code/data/message_boxes/text_purple.txt
+macro text_purple()
+	table data/message_boxes/text_purple.txt
 endmacro
 
-macro %text_yellow()
-	table Code/data/message_boxes/text_yellow.txt
+macro text_yellow()
+	table data/message_boxes/text_yellow.txt
 endmacro
 
-macro %text_blue()
-	table Code/data/message_boxes/text_blue.txt
+macro text_blue()
+	table data/message_boxes/text_blue.txt
 endmacro
 
-macro %text_green()
-	table Code/data/message_boxes/text_green.txt
+macro text_green()
+	table data/message_boxes/text_green.txt
 endmacro
 
 org $858080
@@ -557,8 +557,8 @@ Message_box:
 	REP #$30
 	LDA !W_Pressed : BEQ -				;if no input, check again
 	BIT !C_B_A : BNE ++					;if input is confirmation, end the box
-	BIT !C_B_left+!C_B_up : BNE .handle_options_left
-	BIT !C_B_right+!C_B_down : BEQ -	;if input is not left/right, check again
+	BIT !C_B_left+!C_B_up_dup : BNE .handle_options_left
+	BIT !C_B_right+!C_B_down_dup : BEQ -	;if input is not left/right, check again
 
 .handle_options_right
 	LDA !W_MSG_return : INC : CMP !NumOptions : BEQ + : BMI +
@@ -755,7 +755,7 @@ Message_box_data:
 
 ; ::: headers :::
 	; --- vanilla headers ---
-	incsrc Code/data/message_boxes/vanilla_headers.asm
+	incsrc data/message_boxes/vanilla_headers.asm
 	; --- extra misc headers ---
 	dw $0000, .short, .dash_ball					;1D
 	; --- end of headers ---
@@ -763,7 +763,7 @@ Message_box_data:
 
 ; ::: data :::
 	; --- vanilla data ---
-	incsrc Code/data/message_boxes/vanilla_data.asm
+	incsrc data/message_boxes/vanilla_data.asm
 	; --- extra misc data ---
 .dash_ball
    %text_purple()

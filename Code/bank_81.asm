@@ -16,7 +16,7 @@ org $818085 : JMP File_load_game
 ; but not before the hexagonal map is shown, because that uses a different set of data and sprites
 org $81ADB7 : ADC #$000E						;this is for going backwards from the square map, so that it will reload the file select sprites
 org $81AC6D : JSR Start_game_loop_to_square_map	;this is going forward to the square map, so that it loads the map sprites
-org $81B14B : incsrc Code/data/subscreens/new_game_square_map.asm ;this is the tilemap under the square map ('map scroll', 'start', 'cancel')
+org $81B14B : incsrc data/subscreens/new_game_square_map.asm ;this is the tilemap under the square map ('map scroll', 'start', 'cancel')
 org $819E3E
 	REP #$30
 	PHB : PHK

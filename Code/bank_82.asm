@@ -1,7 +1,7 @@
 lorom
 
 ; because the arrangement of sprite gfx in vram during the pause screen has changed, the sprites needed to be adjusted
-incsrc Code/data/subscreens/pause_sprites_vanilla.asm
+incsrc data/subscreens/pause_sprites_vanilla.asm
 
 ; --- Quote58 ---
 ; this is misc stuff that needed to be adjusted for various reasons for BE
@@ -9,7 +9,7 @@ org $82F088 : dw $F08E, Moonwalk_option, $F0B2
 org $828FE4 : STA !W_CGRAM_Backup,x		;in vanilla, this is stored to and loaded from 7E:3300, which is also used by message boxes
 org $82A2EE : LDA !W_CGRAM_Backup,x		;this was fine, because message boxes couldn't be used on the subscreen. However, now that they can, this ram has been changed to 7F
 org $82965F								;because of moving gfx around, the tilemaps for the area names need to be rewritten
-table Code/data/subscreens/text_subscreen.txt
+table data/subscreens/text_subscreen.txt
 Map_names: : dw .crateria, .brinstar, .norfair, .w_ship, .maridia, .tourian, .ceres, .tourian
 .crateria : dw "__crateria__"			;it's also now convenient to change them though
 .brinstar : dw "__brinstar__"
@@ -392,7 +392,7 @@ Subscreen:
 	JSR ($0000,x)
 	RTS
 
-.screen_type : dw .map_screen, .equip_screen, .options_screen,
+.screen_type : dw .map_screen, .equip_screen, .options_screen
 
 .map_screen     : dw .map_load, .map_in, .map, .map_out
 .equip_screen   : dw .equip_load, .equip_in, .equip, .equip_out

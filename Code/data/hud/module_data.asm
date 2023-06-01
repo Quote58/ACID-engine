@@ -63,7 +63,7 @@
 
 .magic_display
 	dw Hud_condition_speed, Hud_tilemaps_magic_display
-	dw !C_H_Magic+!C_H_Spark, Hud_method_draw_magic_display
+	dw !C_H_Magic+!C_H_Spark_dup, Hud_method_draw_magic_display
 
 .missiles_counter
 	dw Hud_condition_missiles, Hud_tilemaps_empty_3_digit_counter

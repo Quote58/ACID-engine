@@ -184,10 +184,10 @@ Backflip:
 !DecayOne 	   = #$0006					;How many frames until 1st vertical momentum slowdown
 !DecayTwo 	   = #$0012					;How many frames until 2nd vertical momentum slowdown
 !DecayThree    = #$0025					;How many frames until 3rd vertical momentum slowdown / after falling
-!StartSpeed	   = #$0005					;How many pixels to boost up at the start
-!LiftSpeed 	   = #$0004					;How many pixels to boost up during damage boost
-!DecaySpeedOne = #$0002					;How many pixels to boost up during damage boost after 1st decay time
-!DecaySpeedTwo = #$0001					;How many pixels to boost up during damage boost after 2nd decay time
+!StartSpeed	   = $0005					;How many pixels to boost up at the start
+!LiftSpeed 	   = $0004					;How many pixels to boost up during damage boost
+!DecaySpeedOne = $0002					;How many pixels to boost up during damage boost after 1st decay time
+!DecaySpeedTwo = $0001					;How many pixels to boost up during damage boost after 2nd decay time
 
 ;*** add check for being under liquid and distinguish between water/lava/acid ***
 

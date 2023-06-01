@@ -8,7 +8,7 @@ lorom
 ; so if space in 8A is ever needed, there's a shit ton of it here if you rewrite the FX loading routine to use patterns instead of full tilemaps
 
 ; if you want to change how the tilemaps look through smile, just remember the tile numbers have changed, so it'll be a little more difficult to do so...
-incsrc Code/data/misc/FX_tilemaps.asm
+incsrc data/misc/FX_tilemaps.asm
 
 org $8AE980
 ; free space in bank $8A

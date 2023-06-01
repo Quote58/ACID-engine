@@ -32,7 +32,7 @@ End_percent_calc:
 	LDA !Tenths       : JSR .draw_digit : INX #2
 	LDA !Hundredths   : JSR .draw_digit : INX #2
 	LDA !Percent      : STA $7E0000,x
-	LDA !Percent+#$10 : STA $7E0040,x
+	LDA !Percent+$10  : STA $7E0040,x
 
    !plxy
    !plb

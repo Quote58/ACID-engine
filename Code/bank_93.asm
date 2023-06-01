@@ -107,13 +107,13 @@ Beam:
 .plasma_ice		 		: %proj_dir("plasma",	  	  	  $00C8)
 .plasma_wave_ice		: %proj_dir("plasma_wave",	  	  $012C)
 
-incsrc Code/data/projectiles/vanilla/beams/power.asm
-incsrc Code/data/projectiles/vanilla/beams/wave.asm
-incsrc Code/data/projectiles/vanilla/beams/ice.asm
-incsrc Code/data/projectiles/vanilla/beams/spazer.asm
-incsrc Code/data/projectiles/vanilla/beams/spazer_wave.asm
-incsrc Code/data/projectiles/vanilla/beams/plasma.asm
-incsrc Code/data/projectiles/vanilla/beams/plasma_wave.asm
+incsrc data/projectiles/vanilla/beams/power.asm
+incsrc data/projectiles/vanilla/beams/wave.asm
+incsrc data/projectiles/vanilla/beams/ice.asm
+incsrc data/projectiles/vanilla/beams/spazer.asm
+incsrc data/projectiles/vanilla/beams/spazer_wave.asm
+incsrc data/projectiles/vanilla/beams/plasma.asm
+incsrc data/projectiles/vanilla/beams/plasma_wave.asm
 
 ; ::: Charged Beams :::
 Beam_c:
@@ -130,13 +130,13 @@ Beam_c:
 .plasma_ice		 		: %proj_dir("plasma",      		  $0258)
 .plasma_wave_ice 		: %proj_dir("plasma_wave", 		  $0384)
 
-incsrc Code/data/projectiles/vanilla/beams/charged_power.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_wave.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_ice.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_spazer.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_spazer_wave.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_plasma.asm
-incsrc Code/data/projectiles/vanilla/beams/charged_plasma_wave.asm
+incsrc data/projectiles/vanilla/beams/charged_power.asm
+incsrc data/projectiles/vanilla/beams/charged_wave.asm
+incsrc data/projectiles/vanilla/beams/charged_ice.asm
+incsrc data/projectiles/vanilla/beams/charged_spazer.asm
+incsrc data/projectiles/vanilla/beams/charged_spazer_wave.asm
+incsrc data/projectiles/vanilla/beams/charged_plasma.asm
+incsrc data/projectiles/vanilla/beams/charged_plasma_wave.asm
 
 ; ::: Missile/Super/Power + Spark echo :::
 Misc:
@@ -165,14 +165,14 @@ Misc:
 	dw $0002,Projectile_no_sprite,$2020,$0003
 	dw $8239,.spark_echo
 
-incsrc Code/data/projectiles/vanilla/missile.asm
-incsrc Code/data/projectiles/vanilla/super_missile.asm
-incsrc Code/data/projectiles/vanilla/bomb.asm
-incsrc Code/data/projectiles/vanilla/power_bomb.asm
-incsrc Code/data/projectiles/vanilla/beam_explosion.asm
-incsrc Code/data/projectiles/vanilla/missile_explosion.asm
-incsrc Code/data/projectiles/vanilla/super_missile_explosion.asm
-incsrc Code/data/projectiles/vanilla/bomb_explosion.asm
+incsrc data/projectiles/vanilla/missile.asm
+incsrc data/projectiles/vanilla/super_missile.asm
+incsrc data/projectiles/vanilla/bomb.asm
+incsrc data/projectiles/vanilla/power_bomb.asm
+incsrc data/projectiles/vanilla/beam_explosion.asm
+incsrc data/projectiles/vanilla/missile_explosion.asm
+incsrc data/projectiles/vanilla/super_missile_explosion.asm
+incsrc data/projectiles/vanilla/bomb_explosion.asm
 
 ; ::: Special Beam Attacks :::
 SBA:
@@ -228,8 +228,8 @@ Flare:
 	dw .charge_s00, .charge_s02
 	dw .charge_s00, .charge_s02
 
-incsrc Code/data/projectiles/vanilla/charge_flare.asm
-incsrc Code/data/projectiles/vanilla/charge_sparks.asm
+incsrc data/projectiles/vanilla/charge_flare.asm
+incsrc data/projectiles/vanilla/charge_sparks.asm
 
 ; ::: Free space for anything else until the end of the bank :::
 ; --- Black Falcon (modified by Quote58) ---
