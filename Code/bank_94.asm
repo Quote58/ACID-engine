@@ -20,7 +20,7 @@ org $94935B : LDA.w BTS_bomb_table_collisions,x
 org $94933C : LDA.w BTS_bomb_table_collisions,x
 
 ; gotta import some labels so the tables don't look all fucked up
-incsrc Code/data/plm/bts_plm_labels.asm
+incsrc data/plm/bts_plm_labels.asm
 
 org $949139
 BTS_crumble_table:

@@ -63,11 +63,11 @@ org $82E126
 !Kill 		= $86BC
 
 ; --- Macros for door types ---
-macro %play_3(sound)
+macro play_3(sound)
 	dw $8C19 : db <sound>
 endmacro
 
-macro %open(speed, f1, f2, f3, clear)
+macro open(speed, f1, f2, f3, clear)
    %play_3($07)
 	dw <speed>, <f1>
 	dw <speed>, <f2>
@@ -76,7 +76,7 @@ macro %open(speed, f1, f2, f3, clear)
 	dw !Kill
 endmacro
 
-macro %close(wait, speed, f1, f2, f3, clear)
+macro close(wait, speed, f1, f2, f3, clear)
 	dw <wait>, <clear>
 	dw <speed>, <f1>
    %play_3($08)
@@ -84,7 +84,7 @@ macro %close(wait, speed, f1, f2, f3, clear)
 	dw <speed>, <f3>
 endmacro
 
-macro %flash(speed, f1, f2)
+macro flash(speed, f1, f2)
 	rep 3 : dw <speed>, <f1>, <speed>+1, <f2>
 	skip 4
 endmacro
@@ -92,19 +92,19 @@ endmacro
 org $84BE59
 ; ::: Regular door animations :::
 Grey_door:
-incsrc Code/data/plm/grey_door.asm
+incsrc data/plm/grey_door.asm
 
 Yellow_door:
-incsrc Code/data/plm/yellow_door.asm
+incsrc data/plm/yellow_door.asm
 
 Green_door:
-incsrc Code/data/plm/green_door.asm
+incsrc data/plm/green_door.asm
 
 Red_door:
-incsrc Code/data/plm/red_door.asm
+incsrc data/plm/red_door.asm
 
 Blue_door:
-incsrc Code/data/plm/blue_door.asm
+incsrc data/plm/blue_door.asm
 
 org $84BA4C
 ; ::: Bomb Torizo door :::
@@ -192,8 +192,8 @@ org $84BA9B
 
 ; this imports a list of defines for all the sound indexes, along with comments that explain each one
 ; and then all the changes to the plm sounds
-incsrc Code/data/plm/item_sound_arguments.asm
-incsrc Code/data/plm/item_sounds.asm
+incsrc data/plm/item_sound_arguments.asm
+incsrc data/plm/item_sounds.asm
 
 org $84EFD4
 ; free space in bank 84
@@ -217,10 +217,10 @@ print "--- End of PLM header list ---\n"
 ; :::																   :::
 
 ; --- Kejardon ---
-incsrc Plm/Disappearing_block/Disappearing_block.asm
+incsrc ../Plm/Disappearing_block/Disappearing_block.asm
 
 ; --- Quote58 (inspired by messanger patch by JAM) ---
-incsrc Plm/Messenger/Messenger.asm
+incsrc ../Plm/Messenger/Messenger.asm
 
 
 ; :::																					 :::
@@ -612,27 +612,27 @@ Collect:
 
 .speed
 	JSR $88F3								;finish the normal routine to set the equipment bit
-	LDA !C_H_Magic+!C_H_Spark : JSL Hud_init_specific		;and then refresh the hud to make sure the speed metre will show up
+	LDA !C_H_Magic+!C_H_Spark_dup : JSL Hud_init_specific		;and then refresh the hud to make sure the speed metre will show up
 	RTS
 
 ; these ammo routines could be combined, especially if you don't include the hud init stuff
 ; but it's not worth the effort right now since PB also called different message boxes
 .missile
-   %inc(!W_Missiles_max, '$0000,y')
-   %inc(!W_Missiles, '$0000,y')
-	LDA !C_H_Select+!C_H_Missiles : JSL Hud_init_specific
+   %inc(!W_Missiles_max, "$0000,y")
+   %inc(!W_Missiles, "$0000,y")
+	LDA !C_H_Select+!C_H_Missiles_dup : JSL Hud_init_specific
 	LDA #$0002 : BRA ++
 
 .super
-   %inc(!W_Supers_max, '$0000,y')
-   %inc(!W_Supers, '$0000,y')
-	LDA !C_H_Select+!C_H_Supers : JSL Hud_init_specific
+   %inc(!W_Supers_max, "$0000,y")
+   %inc(!W_Supers, "$0000,y")
+	LDA !C_H_Select+!C_H_Supers_dup : JSL Hud_init_specific
 	LDA #$0003 : BRA ++
 
 .power
-   %inc(!W_Powers_max, '$0000,y')
-   %inc(!W_Powers, '$0000,y')
-	LDA !C_H_Select+!C_H_Powers : JSL Hud_init_specific
+   %inc(!W_Powers_max, "$0000,y")
+   %inc(!W_Powers, "$0000,y")
+	LDA !C_H_Select+!C_H_Powers_dup : JSL Hud_init_specific
 	LDA #$0004 : BRA ++
 
 .reserve_tank

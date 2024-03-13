@@ -179,7 +179,9 @@ lorom
 
 ;the bit value of a given hardware button, used to check against input registers and their ram mirrors
 !C_B_up				= #$0800
+!C_B_up_dup			= $0800
 !C_B_down			= #$0400
+!C_B_down_dup		= $0400
 !C_B_left			= #$0200
 !C_B_right			= #$0100
 !C_B_X				= #$0040
@@ -212,14 +214,18 @@ lorom
 ;the bit value of a given hud modual in the modual update array
 !C_H_Health			= #$0001
 !C_H_Missiles		= #$0002
+!C_H_Missiles_dup	= $0002
 !C_H_Supers			= #$0004
+!C_H_Supers_dup		= $0004
 !C_H_Powers			= #$0008
+!C_H_Powers_dup		= $0008
 !C_H_Select			= #$0010
 !C_H_Input			= #$0020
 !C_H_Minimap		= #$0040
 !C_H_Charge			= #$0080
 !C_H_Magic			= #$0100
 !C_H_Spark			= #$0200
+!C_H_Spark_dup		= $0200
 !C_H_Reserves		= #$0400
 
 ;the bit value of options are single bytes because they are stored in the extra event bit array and 

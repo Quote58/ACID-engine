@@ -282,7 +282,7 @@ Morph_flash_trigger:
 	LDA !W_X_pos : SEC : SBC #$0004
 	JSR .check_if_air : BNE .end
 	
-	LDA !C_Flash_amount : STA !W_Morph_flash ;activate morph flash by resetting the palette index
+	LDA.w !C_Flash_amount : STA !W_Morph_flash ;activate morph flash by resetting the palette index
 	;JSL Play_morph_sound
 	
 .end

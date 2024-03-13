@@ -84,8 +84,8 @@ Charge_attract:							;[X = projectile index]
 	LDA !C_O_Charge_attract : JSL Check_option_bit : BCC .end
 	LDA !W_Charge : CMP !C_Full_charge : BMI .end
 	
-   %sub('!ER_proj_Xpos,x', !W_X_pos, $12)
-   %sub('!ER_proj_Ypos,x', !W_Y_pos, $14)
+   %sub("!ER_proj_Xpos,x", !W_X_pos, $12)
+   %sub("!ER_proj_Ypos,x", !W_Y_pos, $14)
 	JSL !Angle_calc : STA !Angle		;get angle between the projectile and samus
 	LDA !W_Charge : CMP !C_Full_charge+1 : BPL +
 	LDA !W_Bomb_charge : BRA ++
@@ -106,8 +106,8 @@ Charge_attract:							;[X = projectile index]
 	LDA !Angle : JSL !Cosine			;get the y length (number of pixels to move vertically)
 	LDA !W_Trig_result : STA !NewY
 
-   %inc('!ER_proj_Xpos,x', !NewX)		;move the projectile towards samus
-   %inc('!ER_proj_Ypos,x', !NewY)
+   %inc("!ER_proj_Xpos,x", !NewX)		;move the projectile towards samus
+   %inc("!ER_proj_Ypos,x", !NewY)
 	
 .end
 	DEC $1B23,x

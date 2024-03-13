@@ -18,7 +18,7 @@ org $87DF40
 ; --- Quote58 (everything here) ---
 ; ::: Reference for subscreen code :::
 ; -----------------------------------
-table Code/data/subscreens/text_subscreen.txt ;the position of letter has changed, so this is the new table
+table data/subscreens/text_subscreen.txt ;the position of letter has changed, so this is the new table
 !Size 	   = $00						;often used to store the size of a given tilemap, especially when drawing the tilemap
 !TilePal   = $18						;often used to store the palette index
 ; -----------------------------------
@@ -252,7 +252,7 @@ Equip_screen:
 	LDA !W_Reserves_type : DEC : JSR Pause_draw_cycler		;reserves_type is 0 if no reserves, and 1/2 if there are
 	
 	LDA #$0000+!C_Reserves_total : STA !Size
-	LDX !TanksX : LDY.w #$0007-!C_Reserves_total*2+#Item_tilemaps_shells
+	LDX !TanksX : LDY.w #$0007-!C_Reserves_total*2+Item_tilemaps_shells
 	JSR Pause_draw_tiles
 	
 	LDA !W_Reserves : %divide_alt(#$64) : STA !FTanks
@@ -322,7 +322,7 @@ Equip_screen_update_pal:
 	LDA !W_Beams_equip : AND #$0FFF
 	ASL A : TAY
    %pea(90)
-	LDA Beam_palette_pointers,y : TAY
+	LDA.w Beam_palette_pointers,y : TAY
 	LDA $0004,y : STA $7EC0F2
 	LDA $0006,y : STA $7EC0FC
 	LDA $0008,y : STA $7EC0FE
@@ -438,7 +438,7 @@ Equip_screen_update_samus_model:
 
 ; this contains all the backend code that handles the list objects
 ; these are all referenced by Pause_ and a list of the routines with descriptions can be found at the top of this file
-incsrc Code/data/subscreens/list_object_code.asm
+incsrc data/subscreens/list_object_code.asm
 
 
 ; --- Quote58 ---
@@ -492,6 +492,6 @@ Boots_list:	   %list($0202, $07, $3CAA, $CB93, $3F1F, $16)
 
 ; ::: Tilemaps for list options and other stuff :::
 Item_tilemaps:
-incsrc Code/data/subscreens/equip_screen/equip_list_tilemaps.asm
+incsrc data/subscreens/equip_screen/equip_list_tilemaps.asm
 
 print "End of free space (87FFFF): ",pc

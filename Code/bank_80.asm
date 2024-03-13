@@ -964,7 +964,7 @@ Hud:
    !phb
 	STZ !W_Hud_update_flags
 	; --- the address mirrors with their update flag changes go here ---
-	incsrc Code/data/hud/hud_mirrors.asm
+	incsrc data/hud/hud_mirrors.asm
 	; ------------------------------------------------------------------
 
 	LDA !W_Hud_update_flags : AND !W_Hud_expect_flags : BEQ .end
@@ -1010,7 +1010,7 @@ Hud_style:
 .types : dw .default
 
 ; here you would put the hud referenced in 'types'
-.default : dw .default_tiles : incsrc Code/data/hud/default.asm
+.default : dw .default_tiles : incsrc data/hud/default.asm
 
 ; and this is where the tile data table referenced in the individual hud table goes
 .default_tiles
@@ -1020,15 +1020,15 @@ Hud_style:
 
 ; ::: the data for all the modules goes here :::
 Hud_module:
-incsrc Code/data/hud/module_data.asm
+incsrc data/hud/module_data.asm
 
 ; ::: this is where all the tilemaps are stored :::
 Hud_tilemaps:
-incsrc Code/data/hud/hud_tilemaps.asm
+incsrc data/hud/hud_tilemaps.asm
 
 ; ::: all methods used by the modules go here :::
 Hud_method:
-incsrc Code/data/hud/hud_methods.asm
+incsrc data/hud/hud_methods.asm
 
 ; ::: methods for checking conditions go here :::
 Hud_condition:

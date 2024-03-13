@@ -179,6 +179,7 @@
 
 .draw_magic_metre
 !Len = #$07
+!Len_dup = $07
 !Total = $12
 !DivA = $12
 !DivB = $14
@@ -192,7 +193,7 @@
 	LDA !DivA : %multiply(!Len)
    %divide_alt(!DivB) : STA !Total
 	LDX !Index
-	LDY #$0000+!Len-1
+	LDY #$0000+!Len_dup-1
 	-
 	LDA !Total : BMI +
 	LDA #$0000 : BRA ++
